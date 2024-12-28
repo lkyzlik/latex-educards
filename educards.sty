@@ -1,0 +1,80 @@
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{fontawesome5}
+
+% Edu card front
+% Params:
+%   Color
+%   Symbol - FA symbol tag
+%   Ctegory name
+%   Title
+%   Subtitle
+%.  Image path
+\newenvironment{educardf}[6]
+{
+    % Border
+    \begin{tcolorbox}[
+      colframe=#1,
+      colback=white,
+      width=\textwidth,
+      height=\textheight,
+      enlarge left by=0mm,
+      boxrule=2mm,
+      outer arc=2mm,
+      bottom=10mm,
+      top=10mm,
+    ]
+    
+    % Category label
+    \vspace{-1em}
+    \textcolor{#1}{\Large #2 \hspace{1pt} \textbf{\textit{#3}}}
+    \vspace{1em}
+    
+    % Main picture
+    \begin{center}
+        \includegraphics[height=0.4\textheight]{#6}
+    \end{center}
+    
+    % Title and subtitle
+    \begin{center}
+        {\Huge\textbf{#4}} \\
+        \vspace{0.5em}
+        \large \textit{#5}
+    \end{center}
+    \vspace{1em}
+}
+{
+    \end{tcolorbox}
+}
+
+% Edu card back
+% Params:
+%   Color
+%   Symbol - FA symbol tag
+%   Ctegory name
+%   Title
+\newenvironment{educardb}[4]
+{
+    % Border
+    \begin{tcolorbox}[
+      colframe=#1,
+      colback=white,
+      width=\textwidth,
+      height=\textheight,
+      enlarge left by=0mm,
+      boxrule=2mm,
+      outer arc=2mm,
+      bottom=10mm,
+      top=10mm,
+    ]
+    
+    % Category label and title
+    \vspace{-1em}
+    \textcolor{#1}{\Large #2 \hspace{1pt} \textbf{\textit{#3} \hfill #4}}
+    \vspace{1em}
+}
+{
+    \end{tcolorbox}
+}
